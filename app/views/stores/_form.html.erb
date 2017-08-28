@@ -1,0 +1,21 @@
+	<%= form_for store do |f| %>
+
+  <%= f.label :name, "Name" %>
+  <%= f.text_field :name %> <br />
+
+ 	<%= f.label :tel, "Tel" %>
+  <%= f.text_field :tel %> <br /> 
+
+  <%= f.label :address, "Address" %>
+  <%= f.text_field :address %> <br />
+
+
+  <%= f.submit class:"btn btn-warning" %>
+
+
+<%= link_to 'back', user_stores_path(user), class:"btn btn-info"%>
+	
+<% end %>
+
+
+

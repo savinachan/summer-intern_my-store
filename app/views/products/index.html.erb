@@ -1,0 +1,17 @@
+<h1>List of Product (<%= @store.name%> / <%= @store.id%>) </h1>
+
+<p>
+  <%= link_to "new product", new_store_product_path(@store), class:"btn btn-info" %>
+</p>
+
+    <%= render partial: "product", collection: @products %>
+
+<!-- 燈箱 -->
+  <div class="mask">
+    <div class="dialog-box">
+        <a class="close">&times;</a>
+        <div class="content"></div>
+    </div>
+  </div>
+<!-- 燈箱 -->
+

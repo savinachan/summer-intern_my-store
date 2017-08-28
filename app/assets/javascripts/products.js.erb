@@ -1,0 +1,24 @@
+$(document).ready(function () {
+
+$('.btn-primary').on('click', function(e){
+    // 開啟燈箱
+    e.preventDefault();
+    //var T = @warehouses;
+    //.parents('.block').find('.details > span').text();
+    $('.dialog-box').children("div").text("hi");
+    $('.mask').fadeIn(1000);
+    
+  });
+
+  $('.dialog-box .close').on('click', function(e){
+    // 關閉燈箱
+    e.preventDefault();
+    $('.mask').fadeOut(1000);
+    //removeClass('active');
+
+  });
+
+});
+
+
+

@@ -1,0 +1,12 @@
+<tr>
+
+<td> <%= user.id %></td>
+<td> <%= user.name %></td>
+<td> <%= user.tel %></td>
+<td> <%= user.email %></td>
+<td> <%= user.stores.ids %></td>
+<td> <%= link_to "store list", user_stores_path(user), class:"btn btn-success" %> </td>
+<td> <%= link_to "edit", edit_user_path(user), class:"btn btn-warning" %> </td>
+<td> <%= link_to "destroy", user_path(user) , method: "delete", data: { confirm: "sure?" }, class:"btn btn-danger" %></td>
+
+</tr>

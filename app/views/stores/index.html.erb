@@ -1,0 +1,28 @@
+<h1>List of Stores (<%= @user.name%> / <%= @user.id%>) </h1>
+<%= link_to "<< user list", users_path, class:"btn btn-warning" %>
+<%= link_to "new store", new_user_store_path(@user), class:"btn btn-info" %>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Tel</td>
+        <td>Address</td>
+        <td>Owner</td>
+
+      </tr>
+    </thead>
+    <tbody>
+
+    <%= render partial: "store", collection: @stores %>
+
+<!--     <% @stores.each do |store| %>
+      <%= render partial: 'store', locals: { store: store } %>
+      <%= render 'store', store: store %>
+    <% end %> -->
+
+
+
+    </tbody>
+  </table>

@@ -1,0 +1,55 @@
+<h1>Product: <%= @product.title%>(ID: <%= @product.id%>)</h1>
+
+<div class="row">
+
+<div class="col-sm-6">
+
+<table class="table table table-condensed">
+  <thead>
+    <tr>
+    <caption><h3> <%= @product.title %> are in ...</h3></caption>
+        <th>#</th>
+        <th>Store</th>
+        <th>Product</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  <%  @stores.each do |w| %>
+    <tr>
+      <td> <%= w.id %> </td>
+      <td> <%= w.name %> </td>
+      <td> <%= @product.title %> </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+</div>
+
+<div class="col-sm-6">
+  
+
+<table class="table table table-condensed">
+  <thead>
+  <tr>
+  <caption><h3> Assign <%= @product.title %> to other store...</h3></caption>
+    
+        <th>#</th>
+        <th>Store</th>
+    </tr>
+  </thead>
+  <tbody>
+  <%  @not_in_stores.each do |nis| %>
+    <tr>
+      <td> <%= nis.id %> </td>
+      <td> <%= nis.name %> </td>
+      <td> <%= link_to "assign", assign_store_path(@product, nis.id), method: "post", class:"btn btn-success" %> </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+</div>
+
+</div>
