@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-	before_action :find_product, only: [:show, :edit, :update, :destroy, :assignment, :assign]
+	before_action :find_product, only: [:show, :edit, :update, :destroy, :assignment, :assign, :unassign]
 	
 	def index
 		@store = Store.find(params[:store_id])
@@ -79,6 +79,16 @@ class ProductsController < ApplicationController
 		# debugger
 		if WareHouse.create( :store_id => @store.id, :product_id => @product.id )
 			redirect_to assignment_store_path(@product), notice: "assign success!"
+		end
+
+	end
+	def unassign
+		
+		@store = Store.find(params[:format])
+		#@w = WareHouse.where(["store_id = ? and product_id = ?", @store.id, @product.id]).limit(1)
+		#debugger
+		if WareHouse.where(["store_id = ? and product_id = ?", @store.id, @product.id]).limit(1).destroy_all
+			redirect_to assignment_store_path(@product), notice: "unassign success!"
 		end
 
 	end

@@ -4,7 +4,7 @@
 <td> <%= store.name %></td>
 <td> <%= store.tel %></td>
 <td> <%= store.address %></td>
-<td> <%= store.user_id %></td>
+<td> <%= store.products.count %></td>
 <td> <%= link_to "Visit !", store_products_path(store), :target => "_blank", class:"btn btn-success" %> </td>
 <td> <%= link_to "edit", edit_store_path(store), :target => "_blank", class:"btn btn-warning" %> </td>
 <td> <%= link_to "destroy", store_path(store), method: "delete", data: { confirm: "sure?" }, class:"btn btn-danger" %></td>

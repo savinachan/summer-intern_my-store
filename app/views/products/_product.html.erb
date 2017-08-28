@@ -6,7 +6,7 @@
     <h3><%= product.title %></h3>
     <p><%= product.description %></p>
     <p class="price"><%= product.price %></p>
-    <p><%= product.stores.first.name %></p>
+    <p><%= product.stores.last.name %></p>
     
     <p> 
     <%= link_to "assign", assignment_store_path(product), :target => "_blank", class:"btn btn-success" %>

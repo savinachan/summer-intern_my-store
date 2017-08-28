@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 		member do
 			get :assignment, to: "products#assignment"
 			post :assign, to: "products#assign"
+			post :unassign, to: "products#unassign"
 		end
 	end
 	resources :products , only: [:show, :edit, :update, :destroy]

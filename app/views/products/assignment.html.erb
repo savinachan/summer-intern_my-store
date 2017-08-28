@@ -3,15 +3,12 @@
 <div class="row">
 
 <div class="col-sm-6">
-
 <table class="table table table-condensed">
   <thead>
     <tr>
     <caption><h3> <%= @product.title %> are in ...</h3></caption>
         <th>#</th>
         <th>Store</th>
-        <th>Product</th>
-
     </tr>
   </thead>
   <tbody>
@@ -19,7 +16,7 @@
     <tr>
       <td> <%= w.id %> </td>
       <td> <%= w.name %> </td>
-      <td> <%= @product.title %> </td>
+      <td> <%= link_to "unassign", unassign_store_path(@product, w.id), method: "post", class:"btn btn-danger" %> </td>
     </tr>
   <% end %>
   </tbody>
@@ -28,13 +25,10 @@
 </div>
 
 <div class="col-sm-6">
-  
-
 <table class="table table table-condensed">
   <thead>
   <tr>
   <caption><h3> Assign <%= @product.title %> to other store...</h3></caption>
-    
         <th>#</th>
         <th>Store</th>
     </tr>
