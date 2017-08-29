@@ -1,7 +1,12 @@
 
   <div class="item well">
     
-    <img class="img-rounded" src="http://fakeimg.pl/250x100/" alt="">
+    <!-- .thumb.url image_tag(product.image, height: 100, width: 100)-->
+    <% if product.image.nil?  %>
+        <img class="img-rounded" src="http://fakeimg.pl/250x100/" alt=""> 
+    <% else  %>
+        <%= image_tag(product.image, height: 100, width: 100) %>
+    <% end %>
     <p><%= product.id %></p>
     <h3><%= product.title %></h3>
     <p><%= product.description %></p>
