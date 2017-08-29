@@ -37,7 +37,7 @@ class ProductsController < ApplicationController
 		#find_
 
 		if @product.update(clean_product_params)
-			redirect_to users_path, notice: "update product!"
+			redirect_to store_products_path(@product.stores.first), notice: "update product!"
     else
       render :edit, notice: "WRONG!"
     end

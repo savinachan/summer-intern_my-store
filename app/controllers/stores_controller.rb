@@ -37,7 +37,8 @@ class StoresController < ApplicationController
 		#find_cand
 
 		if @store.update(clean_store_params)
-			redirect_to users_path, notice: "update store!"
+			redirect_to user_stores_path(@store.user), notice: "update store!"
+
     else
       render :edit, notice: "WRONG!"
     end
