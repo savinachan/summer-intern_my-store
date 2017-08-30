@@ -8,18 +8,32 @@
         <%= image_tag product.image %>
     <% end %>
     </div>
+    <span class="details hidden">
+    <table>
+        <tr>
+          <td>ID: <%= product.id %></td>
+        </tr>
+        <tr>
+          <td>Title: <%= product.title %></td>
+        </tr>
+        <tr>
+            <td>Price: NTD <%= product.price %> </td>
+        </tr>
+        <tr>
+          <td>Description: <%= product.description %></td>
+        </tr>
+    </table>
+    </span>
 
-    <p><%= product.id %></p>
-    <h3><%= product.title %></h3>
-    <p><%= product.description %></p>
-    <p class="price"><%= product.price %></p>
-    <p><%= product.stores.last.name %></p>
-    
+    <p class="title"> <h3><%= product.title %></h3> </p>
+    <p class="price">NTD <%= product.price %> </p>
     <p> 
     <%= link_to "assign", assignment_store_path(product), :target => "_blank", class:"btn btn-success" %>
-    <%= link_to "edit", edit_product_path(product), :target => "_blank", class:"btn btn-warning" %>
+    <a class="btn btn-primary" href="">View details</a>
+    </p>
+    <p>
+    <%= link_to "edit", edit_product_path(product), class:"btn btn-warning" %>
     <%= link_to "destroy", product_path(product), method: "delete", data: { confirm: "sure?" }, class:"btn btn-danger" %>
-    <p><a class="btn btn-primary" href="">View details</a></p> 
     </p>
 
 

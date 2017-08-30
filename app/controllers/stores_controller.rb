@@ -53,6 +53,10 @@ class StoresController < ApplicationController
 		#find_cand
 	end
 
+	def sale
+		
+	end
+
 	private #######
 
 	def clean_store_params #params[:candidate]

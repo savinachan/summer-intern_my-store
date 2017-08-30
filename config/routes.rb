@@ -4,11 +4,8 @@ Rails.application.routes.draw do
 		resources :stores, only: [:index, :create, :new]
 	end
 	resources :stores , only: [:show, :edit, :update, :destroy] do
-		resources :products, only: [:index, :create, :new] do
-			#member do
-			#post :assign, to: "products#assign"
-		#end
-		end
+		get :sale, to: "stores#sale"
+		resources :products, only: [:index, :create, :new]
 		member do
 			get :assignment, to: "products#assignment"
 			post :assign, to: "products#assign"

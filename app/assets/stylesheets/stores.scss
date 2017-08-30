@@ -1,3 +1,40 @@
-// Place all the styles related to the stores controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+button {
+  font-size: 22px;
+}
+
+.lottery-nums {
+  overflow: hidden;
+  width: 600px;
+}
+
+.lottery-nums>div {
+  display: block;
+  float: left;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #999;
+  background-color: #fff;
+  color: #555;
+  font-size: 20px;
+  padding: 5px;
+  text-align: center;
+  line-height: 25px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.lottery-nums .selected {
+  background-color: green;
+  color: #fff;
+}
+
+.lottery-nums .highlight {
+  background-color: red;
+  color: #fff;
+}
+
+.lottery-nums .selected.highlight {
+  background-color: yellow;
+  color: #333;
+}
+
