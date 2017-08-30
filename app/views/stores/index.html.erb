@@ -1,4 +1,6 @@
-<h1>List of Stores (<%= @user.name%> / <%= @user.id%>) </h1>
+<div class="page-header">
+    <h1>List of Stores (<%= @user.name%> / <%= @user.id%>) </h1>      
+</div>
 <%= link_to "<< user list", users_path, class:"btn btn-warning" %>
 <%= link_to "new store", new_user_store_path(@user), class:"btn btn-info" %>
 

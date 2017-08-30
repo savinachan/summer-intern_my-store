@@ -1,7 +1,14 @@
 
   <div class="item well">
     
-    <img class="img-rounded" src="http://fakeimg.pl/250x100/" alt="">
+    <div class="image_size">
+    <% if product.image.nil?  %>
+        <img class="img-rounded" src="http://fakeimg.pl/250x100/" alt="no pic!"> 
+    <% else  %>
+        <%= image_tag product.image %>
+    <% end %>
+    </div>
+
     <p><%= product.id %></p>
     <h3><%= product.title %></h3>
     <p><%= product.description %></p>
@@ -11,7 +18,9 @@
     <p> 
     <%= link_to "assign", assignment_store_path(product), :target => "_blank", class:"btn btn-success" %>
     <%= link_to "edit", edit_product_path(product), :target => "_blank", class:"btn btn-warning" %>
-    <%= link_to "destroy", product_path(product), method: "delete", data: { confirm: "sure?" }, class:"btn btn-danger" %></p>
+    <%= link_to "destroy", product_path(product), method: "delete", data: { confirm: "sure?" }, class:"btn btn-danger" %>
     <p><a class="btn btn-primary" href="">View details</a></p> 
-    
+    </p>
+
+
   </div>

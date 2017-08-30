@@ -97,7 +97,7 @@ class ProductsController < ApplicationController
 	private #######
 
 	def clean_product_params #params[:candidate]
-		clean_params = params.require(:product).permit(:title, :description, :price, :store_id)
+		clean_params = params.require(:product).permit(:title, :description, :price, :store_id, :image)
 	end
 
 	def find_product
