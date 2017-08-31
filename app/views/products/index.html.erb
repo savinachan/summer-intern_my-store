@@ -2,12 +2,9 @@
     <h1>List of Product (<%= @store.name%> / <%= @store.id%>) </h1>   
 </div>
 
-
-
 <p>
   <%= link_to "new product", new_store_product_path(@store), class:"btn btn-info" %>
-	<a href="#"><span class="glyphicon glyphicons-lightbulb"></span></a>
-  <a class="btn btn-danger btn-lg" href="">I want to play a game!</a>
+  <%= link_to "I want to play a game!", store_sale_path(@store), :target => "_blank", class:"btn btn-danger btn-lg" %>
 </p>
 
     <%= render partial: "product", collection: @products %>
